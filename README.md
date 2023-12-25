@@ -1,1 +1,0 @@
-# ghosvx.github.io
