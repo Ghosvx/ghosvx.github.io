@@ -1,0 +1,188 @@
+/* styles_about.css */
+body {
+  font-family: 'Verdana', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header, nav, section, footer {
+  padding: 1em;
+}
+
+header {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #2c2c2c;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.bio {
+  margin-bottom: 20px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.social-button {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.telegram {
+  background-color: #0088cc;
+  color: #fff;
+}
+
+.telegram:hover {
+  background-color: #005580;
+}
+
+.discord {
+  background-color: #7289da;
+  color: #fff;
+}
+
+.discord:hover {
+  background-color: #677bc4;
+}
+
+.tiktok {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.tiktok:hover {
+  background-color: #5d3aae;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: #555;
+  transition: background-color 0.3s ease;
+}
+
+footer a:hover {
+  background-color: #777;
+}
+
+.google {
+  background-color: #4285F4;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.google:hover {
+  background-color: #357ae8;
+}
+
+.rutrackerlink {
+  background-color: #4CAF50;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.rutrackerlink:hover {
+  background-color: #45a049;
+}
+
+.uknowncheatslink {
+  background-color: #007BFF;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.uknowncheatslink:hover {
+  background-color: #0056b3;
+}
+
+.youtube-link {
+  background-color: #FF0000;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.youtube-link:hover {
+  background-color: #cc0000;
+}
+
+.steam-link {
+  background-color: #001C3F;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.steam-link:hover {
+  background-color: #000a1c;
+}
+
+.spotify-link {
+  background-color: #1DB954;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.spotify-link:hover {
+  background-color: #14813B;
+}
+
+.twitch-link {
+  background-color: #6441A5;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.twitch-link:hover {
+  background-color: #4B3176;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    font-size: 1.5em;
+  }
+
+  section {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .social-button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
