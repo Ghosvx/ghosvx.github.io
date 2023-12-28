@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/pic/favicon.ico">
   <title>Ghosvx</title>
-  <link rel="stylesheet" href="/css/styles_index.css">
+  <link rel="stylesheet" href="css/mobile_index.css">
 </head>
 <body class="snowfall">
   <header>
@@ -13,9 +13,11 @@
   </header>
 
   <nav>
-    <a href="index.html">Главная</a>
-    <a href="about.html">Ссылки</a>
-    <a href="project.html">Проекты</a>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="about.html">Ссылки</a>
+      <a href="project.html">Проекты</a>
+    </div>
   </nav>
 
   <section>
@@ -35,7 +37,6 @@
     </div>
   </section>
   
-
   <div id="msgBox" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeMsgBox()">&times;</span>
@@ -47,12 +48,6 @@
   <footer>
     Made in Ukraine. By Ghosvx
   </footer>
-
-  <script>
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        window.location.href = 'mobile/index.html';
-    }
-</script>
 
   <script src="/script/script.js"></script>
 </body>
