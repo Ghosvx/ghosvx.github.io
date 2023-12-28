@@ -115,3 +115,14 @@ function closeMsgBox() {
   }, 500);
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Проверка, является ли устройство телефоном
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Добавление класса 'mobile' к body
+    document.body.classList.add('mobile');
+
+    // Удаление класса 'snowfall' с body, если он есть
+    document.body.classList.remove('snowfall');
+  }
+});
