@@ -117,12 +117,20 @@ function closeMsgBox() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Проверка, является ли устройство телефоном
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    // Добавление класса 'mobile' к body
-    document.body.classList.add('mobile');
-
-    // Удаление класса 'snowfall' с body, если он есть
-    document.body.classList.remove('snowfall');
+  function checkOrientation() {
+    // Проверка текущей ориентации устройства
+    if (window.orientation === undefined || window.orientation === 0) {
+      // Пользователь находится в вертикальной ориентации, перенаправление на другую страницу
+      window.location.href = 'mobile.html';
+    } else {
+      // Пользователь находится в горизонтальной ориентации, продолжаем загрузку сайта
+      // Можете также добавить дополнительную логику, если нужно
+    }
   }
+
+  // Проверка ориентации при загрузке страницы
+  checkOrientation();
+
+  // Слушатель события изменения ориентации устройства
+  window.addEventListener('orientationchange', checkOrientation);
 });
