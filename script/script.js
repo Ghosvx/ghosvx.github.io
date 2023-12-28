@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Пользователь находится на мобильном устройстве
       if (window.orientation === undefined || window.orientation === 0) {
         // Пользователь в вертикальной ориентации, перенаправление на другую страницу
-        window.location.href = 'url_для_страницы_с_предупреждением.html';
+        window.location.href = 'mobile.html';
       } else {
         // Пользователь в горизонтальной ориентации, продолжаем загрузку сайта
         // Можете также добавить дополнительную логику, если нужно
