@@ -17,6 +17,13 @@ body {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.message h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
 }
 
 @media screen and (min-width: 768px) {
