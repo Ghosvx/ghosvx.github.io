@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Пользователь находится на мобильном устройстве
       if (window.orientation === undefined || window.orientation === 0) {
         // Пользователь в вертикальной ориентации, перенаправление на другую страницу
-        window.location.href = 'mobile.html';
+        window.location.href = 'url_для_страницы_с_предупреждением.html';
       } else {
         // Пользователь в горизонтальной ориентации, продолжаем загрузку сайта
         // Можете также добавить дополнительную логику, если нужно
@@ -133,12 +133,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Проверка ориентации при загрузке страницы
-  checkOrientation();
+  // Проверка ориентации при загрузке страницы только на мобильных устройствах
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    checkOrientation();
 
-  // Слушатель события изменения ориентации устройства
-  window.addEventListener('orientationchange', checkOrientation);
+    // Слушатель события изменения ориентации устройства
+    window.addEventListener('orientationchange', checkOrientation);
+  }
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
