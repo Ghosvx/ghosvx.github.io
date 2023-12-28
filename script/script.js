@@ -143,30 +143,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  function checkOrientationAndFullScreen() {
-    // Проверка текущей ориентации устройства
-    if (window.orientation !== undefined && window.orientation === 90) {
-      // Устройство находится в горизонтальной ориентации
+  function enterFullscreenOnHorizontal() {
+    // Проверка, является ли устройство мобильным
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-      // Запрос на вход в полноэкранный режим
-      const documentElement = document.documentElement;
-      if (documentElement.requestFullscreen) {
-        documentElement.requestFullscreen();
-      } else if (documentElement.mozRequestFullScreen) { // Firefox
-        documentElement.mozRequestFullScreen();
-      } else if (documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        documentElement.webkitRequestFullscreen();
-      } else if (documentElement.msRequestFullscreen) { // IE/Edge
-        documentElement.msRequestFullscreen();
+    if (isMobile) {
+      // Проверка ориентации устройства
+      if (window.orientation !== undefined && window.orientation === 90) {
+        // Устройство находится в горизонтальной ориентации
+
+        // Запрос на вход в полноэкранный режим
+        const documentElement = document.documentElement;
+        if (documentElement.requestFullscreen) {
+          documentElement.requestFullscreen();
+        } else if (documentElement.mozRequestFullScreen) { // Firefox
+          documentElement.mozRequestFullScreen();
+        } else if (documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          documentElement.webkitRequestFullscreen();
+        } else if (documentElement.msRequestFullscreen) { // IE/Edge
+          documentElement.msRequestFullscreen();
+        }
       }
     }
   }
 
-  // Проверка ориентации и полноэкранного режима при загрузке страницы
-  checkOrientationAndFullScreen();
+  // Вызов функции при загрузке страницы
+  enterFullscreenOnHorizontal();
 
   // Слушатель события изменения ориентации устройства
-  window.addEventListener('orientationchange', checkOrientationAndFullScreen);
+  window.addEventListener('orientationchange', enterFullscreenOnHorizontal);
 });
+
