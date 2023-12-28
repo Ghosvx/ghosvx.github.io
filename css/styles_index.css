@@ -134,6 +134,7 @@ body.snowfall .snowflake {
   animation-duration: 5s;
 }
 
+/*
 @media screen and (max-width: 768px) {
   header, nav, section, footer {
     padding: 0.5em;
@@ -144,6 +145,7 @@ body.snowfall .snowflake {
     margin: 0 10px;
   }
 }
+*/
 
 .modal {
   display: none;
