@@ -269,10 +269,15 @@ body.snowfall .snowflake {
   z-index: 3;
 }
 
+.bottom-menu label {
+  cursor: pointer;
+}
+
 .bottom-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: none; /* Изначально скрываем меню */
 }
 
 .bottom-menu li {
@@ -295,4 +300,10 @@ body.snowfall .snowflake {
 .bottom-menu i:hover {
   color: #808080;
 }
+
+/* Отображаем меню, когда чекбокс активирован */
+#social-menu-toggle:checked + .bottom-menu ul {
+  display: inline-block;
+}
+
 
