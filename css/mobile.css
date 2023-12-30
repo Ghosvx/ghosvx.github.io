@@ -1,8 +1,9 @@
-body {
+.body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #343a40; /* Темно-серый цвет фона */
+    color: #fff; /* Белый цвет текста */
 }
 
 .container {
@@ -15,7 +16,7 @@ body {
 .message {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Белый цвет фона с прозрачностью */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -23,7 +24,11 @@ body {
 .message h1 {
     margin: 0;
     font-size: 24px;
-    color: #333;
+}
+
+.message i {
+    font-size: 40px;
+    margin-top: 10px;
 }
 
 @media screen and (min-width: 768px) {
