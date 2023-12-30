@@ -257,6 +257,7 @@ body.snowfall .snowflake {
   }
 }
 
+/* Стили для нового меню внизу страницы */
 .bottom-menu {
   background-color: #2c2c2c;
   color: #fff;
@@ -287,9 +288,11 @@ body.snowfall .snowflake {
 
 /* Стили для иконок социальных сетей (Font Awesome) */
 .bottom-menu i {
+  margin-right: 5px;
   transition: color 0.3s ease-out;
 }
 
 .bottom-menu i:hover {
   color: #808080;
 }
+
