@@ -9,6 +9,98 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+  body {
+   font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .menu i {
+      margin-right: 5px;
+    }
+
+    .menu-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-list li {
+      margin: 0 10px;
+    }
+
+    .menu-list li:first-child {
+      margin-left: 0;
+    }
+
+    .menu-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .menu-toggle:checked + .menu .menu-list {
+      max-height: 200px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-list {
+        max-height: 200px;
+      }
+
+      .menu-list li {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+
+</head>
+<body class="snowfall">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <div class="menu">
+    <label for="menu-toggle">&#9776; Меню</label>
+    <ul class="menu-list">
+      <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="#"><i class="fas fa-link"></i> Ссылки</a></li>
+      <li><a href="#"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+    </ul>
+  </div>
 </head>
 <body class="snowfall">
   <header>
