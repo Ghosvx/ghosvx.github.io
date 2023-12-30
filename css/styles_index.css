@@ -257,27 +257,38 @@ body.snowfall .snowflake {
   }
 }
 
-.side-menu {
+.links-menu-toggle {
+  display: none;
+}
+
+.links-menu-panel {
   position: fixed;
   top: 0;
-  left: -250px; /* Скрываем меню в начальный момент времени */
+  right: -250px;
   width: 250px;
   height: 100%;
   background-color: #2c2c2c;
   padding-top: 20px;
-  transition: 0.5s; /* Анимация при выдвижении меню */
+  transition: 0.5s;
+  z-index: 3;
 }
 
-.side-menu ul {
+.links-menu-panel label {
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.links-menu-list {
   list-style: none;
   padding: 0;
 }
 
-.side-menu li {
+.links-menu-list li {
   margin-bottom: 10px;
 }
 
-.side-menu a {
+.links-menu-list a {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
@@ -286,6 +297,23 @@ body.snowfall .snowflake {
   transition: 0.3s;
 }
 
-.side-menu a:hover {
+.links-menu-list a:hover {
   background-color: #555;
 }
+
+.links-close-menu-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Адаптивные стили для меню на странице "Ссылки" на мобильных устройствах */
+  .links-menu-panel {
+    width: 100%;
+  }
+}
+
