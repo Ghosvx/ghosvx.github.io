@@ -38,14 +38,16 @@
       z-index: 2;
     }
 
-    .menu label {
+      .menu label {
       color: #fff;
-      transition: color 0.3s ease-out;
-    }
+     transition: color 0.3s ease-out;
+     cursor: pointer;
+   }
 
-    .menu label:hover {
-      color: #808080;
-    }
+  .menu label:hover {
+   color: #808080;
+  }
+
 
     .menu a {
       color: #fff;
@@ -136,9 +138,11 @@
     <ul class="menu-list">
       <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
       <li><a href="about.html"><i class="fas fa-link"></i> Ссылки</a></li>
-      <li><a href="project.html"><i class="fas fa-project-diagram"></i> Проекты</a></li>
-    
-      <!-- Новые кнопки из страницы "Ссылки" -->
+      <li><a href=project.html><i class="fas fa-project-diagram"></i> Проекты</a></li>
+    </ul>
+  </div>
+  <div class="side-menu">
+    <ul>
       <li><a href="https://t.me/ghosvx"><i class="fab fa-telegram"></i> Telegram</a></li>
       <li><a href="https://discordapp.com/users/812653804041666581/" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
       <li><a href="https://www.tiktok.com/@ghosvx"><i class="fab fa-tiktok"></i> TikTok</a></li>
@@ -150,7 +154,7 @@
       <li><a href="https://www.twitch.tv/ghosvx"><i class="fab fa-twitch"></i> Twitch</a></li>
     </ul>
   </div>
-
+  
   <div class="overlay"></div>
 
   <header>
@@ -186,7 +190,10 @@
   <footer>
     Made in Ukraine. By Ghosvx
   </footer>
-
+  
+  <input type="checkbox" id="side-menu-toggle" class="menu-toggle">
+  <label for="side-menu-toggle">&#9776; Ссылки</label>
+  
 </script>
 
   <script src="/script/script.js"></script>
