@@ -1,7 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var previousPage = document.referrer;
+
     function checkOrientationAndRedirect() {
         if (window.innerWidth > window.innerHeight) {
-            window.history.back();
+            if (previousPage) {
+                window.location.href = previousPage;
+            } else {
+                // Если предыдущая страница не определена, перенаправляем на главную
+                window.location.href = 'index.html';
+            }
         }
     }
 
