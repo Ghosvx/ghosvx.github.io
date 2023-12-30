@@ -175,3 +175,22 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('orientationchange', enterFullscreenOnHorizontal);
 });
 
+function videoClick(event) {
+  if (event) event.preventDefault();
+
+  // Проверка ориентации устройства
+  if (window.screen.orientation && window.screen.orientation.type === 'landscape-primary') {
+    // Устройство находится в горизонтальной ориентации
+
+    // Запрос на вход в полноэкранный режим
+    const { documentElement } = document;
+    if (documentElement.requestFullscreen) documentElement.requestFullscreen();
+    else if (documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+    else if (documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+    else if (documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
+  }
+}
+
+// Привязываем функцию к событию клика
+document.body.addEventListener('click', videoClick);
+
