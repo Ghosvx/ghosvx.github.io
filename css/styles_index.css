@@ -211,7 +211,7 @@ body.snowfall .snowflake {
 }
 
 .text-container {
-  text-align: center;
+  text-align: right;
   flex: 1;
   font-family: 'Raleway', sans-serif;
 }
