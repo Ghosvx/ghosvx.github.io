@@ -211,9 +211,9 @@ body.snowfall .snowflake {
 }
 
 .text-container {
-  text-align: left;
+  text-align: center;
   flex: 1;
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .text-container div {
