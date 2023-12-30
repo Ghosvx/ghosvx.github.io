@@ -10,19 +10,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css" />
-    <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
 
     <title>Мои проекты</title>
     <style>
       body {
           margin: 0;
-          overflow: hidden; /* Убираем стандартный скролл браузера */
+          overflow: hidden;
       }
 
       #container {
-          overflow-y: scroll; /* Добавляем скролл только по вертикали внутри контейнера */
-          height: 100vh; /* Задаем высоту контейнера на весь экран */
+          overflow-y: scroll;
+          height: 100vh;
+          padding-right: 17px; /* Add space for scrollbar */
+      }
+
+      ::-webkit-scrollbar {
+          width: 0; /* Remove scrollbar space */
+          background: transparent; /* Optional: just make scrollbar invisible */
       }
   </style>
 
@@ -146,7 +150,7 @@
         </style>
       </head>
       <body>
-    <div id="container" data-simplebar>
+        <div id="container">
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <div class="menu">
           <label for="menu-toggle">&#9776; Меню</label>
@@ -194,12 +198,9 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
           const container = document.getElementById("container");
-
+  
           container.addEventListener("wheel", function (event) {
-              // Расскомментируйте следующую строку, если хотите инвертировать направление прокрутки
-              // const speed = -0.5;
-              const speed = 0.5; // Измените значение для управления скоростью прокрутки
-
+              const speed = 0.5; // Adjust the scrolling speed
               container.scrollTop += event.deltaY * speed;
               event.preventDefault();
           });
