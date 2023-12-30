@@ -257,53 +257,5 @@ body.snowfall .snowflake {
   }
 }
 
-/* Стили для нового меню внизу страницы */
-.bottom-menu {
-  background-color: #2c2c2c;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 3;
-}
-
-.bottom-menu label {
-  cursor: pointer;
-}
-
-.bottom-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none; /* Изначально скрываем меню */
-}
-
-.bottom-menu li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.bottom-menu a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-}
-
-/* Стили для иконок социальных сетей (Font Awesome) */
-.bottom-menu i {
-  margin-right: 5px;
-  transition: color 0.3s ease-out;
-}
-
-.bottom-menu i:hover {
-  color: #808080;
-}
-
-/* Отображаем меню, когда чекбокс активирован */
-#social-menu-toggle:checked + .bottom-menu ul {
-  display: inline-block;
-}
 
 
