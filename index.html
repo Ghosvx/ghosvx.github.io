@@ -23,7 +23,7 @@
     overflow: hidden;
   }
 
-    .menu-toggle {
+  .menu-toggle {
       display: none;
       cursor: pointer;
     }
@@ -53,6 +53,14 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .menu-list.show {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     .menu-list li {
@@ -63,14 +71,9 @@
       margin-left: 0;
     }
 
-    .menu-list {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-
     .menu-toggle:checked + .menu .menu-list {
-      max-height: 200px;
+      transform: translateY(0);
+      opacity: 1;
     }
 
     @media screen and (max-width: 768px) {
@@ -79,6 +82,8 @@
       }
 
       .menu-list {
+        transform: translateY(0);
+        opacity: 1;
         max-height: 200px;
       }
 
@@ -89,7 +94,6 @@
       }
     }
   </style>
-
 </head>
 <body class="snowfall">
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
