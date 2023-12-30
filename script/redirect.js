@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    function checkOrientation() {
+    function checkOrientationAndRedirect() {
         if (window.innerWidth > window.innerHeight) {
-            window.location.href = 'index.html';
+            window.history.back();
         }
     }
 
     // Проверяем ориентацию при загрузке страницы
-    checkOrientation();
+    checkOrientationAndRedirect();
 
     // Проверяем ориентацию при изменении размеров окна
-    window.addEventListener('resize', checkOrientation);
+    window.addEventListener('resize', checkOrientationAndRedirect);
+
+    // Проверяем ориентацию при изменении ориентации устройства
+    window.addEventListener('orientationchange', checkOrientationAndRedirect);
 });
