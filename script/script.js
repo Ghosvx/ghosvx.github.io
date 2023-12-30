@@ -175,11 +175,14 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('orientationchange', enterFullscreenOnHorizontal);
 });
 
-function videoClick(event) {
+function videoTouch(event) {
   if (event) event.preventDefault();
 
+  // Проверка userAgent на наличие ключевых слов, характерных для мобильных устройств
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   // Проверка ориентации устройства
-  if (window.screen.orientation && window.screen.orientation.type === 'landscape-primary') {
+  if (isMobile && window.screen.orientation && window.screen.orientation.type === 'landscape-primary') {
     // Устройство находится в горизонтальной ориентации
 
     // Запрос на вход в полноэкранный режим
@@ -191,6 +194,7 @@ function videoClick(event) {
   }
 }
 
-// Привязываем функцию к событию клика
-document.body.addEventListener('click', videoClick);
+// Привязываем функцию к событию touchstart
+document.body.addEventListener('touchstart', videoTouch);
+
 
