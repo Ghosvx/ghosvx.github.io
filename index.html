@@ -1,201 +1,213 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.50">
-  <link rel="icon" type="image/x-icon" href="/pic/favicon.ico">
-  <title>Ghosvx</title>
-  <link rel="stylesheet" href="/css/styles_index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-  body {
-   font-family: 'Ubuntu', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.50">
+    <link rel="icon" type="image/x-icon" href="/pic/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_project.css">
+    <link rel="stylesheet" href="css/styles_index.css"> <!-- Новый стиль для index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  .menu-toggle {
-      display: none;
-      cursor: pointer;
-    }
+    <title>Мои проекты</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
 
-    .menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #2c2c2c;
-      padding: 0.5em;
-      position: relative;
-      z-index: 2;
-    }
+        #container {
+            overflow-y: scroll;
+            height: 100vh;
+            padding-right: 17px; /* Add space for scrollbar */
+        }
 
-      .menu label {
-      color: #fff;
-     transition: color 0.3s ease-out;
-     cursor: pointer;
-   }
+        ::-webkit-scrollbar {
+            width: 0; /* Remove scrollbar space */
+            background: transparent; /* Optional: just make scrollbar invisible */
+        }
+    </style>
 
-  .menu label:hover {
-   color: #808080;
-  }
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
 
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: color 0.3s ease-out;
-    }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c2c2c;
+            padding: 0.5em;
+            position: relative;
+            z-index: 2;
+        }
 
-    .menu a:hover {
-      color: #808080;
-    }
+        .menu label {
+            color: #fff;
+            transition: color 0.3s ease-out;
+            cursor: pointer;
+        }
 
-    .menu i {
-      margin-right: 5px;
-    }
+        .menu label:hover {
+            color: #808080;
+        }
 
-    .menu-list {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      transform: translateY(-100%);
-      opacity: 0;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease-out;
+        }
 
-    .menu-list.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
+        .menu a:hover {
+            color: #808080;
+        }
 
-    .menu-list li {
-      margin: 0 10px;
-    }
+        .menu i {
+            margin-right: 5px;
+        }
 
-    .menu-list li:first-child {
-      margin-left: 0;
-    }
+        .menu-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
 
-    .menu-toggle:checked + .menu .menu-list {
-      transform: translateY(0);
-      opacity: 1;
-    }
+        .menu-list.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-    /* Затемнение фона */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Измените значение альфа-канала по вашему вкусу */
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s, visibility 0s linear 0.3s;
-      z-index: 1;
-    }
+        .menu-list li {
+            margin: 0 10px;
+        }
 
-    .menu-toggle:checked ~ .overlay {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity 0.3s;
-    }
+        .menu-list li:first-child {
+            margin-left: 0;
+        }
 
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+        .menu-toggle:checked+.menu .menu-list {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-      .menu-list {
-        transform: translateY(0);
-        opacity: 1;
-        max-height: 200px;
-      }
+        /* Затемнение фона */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Измените значение альфа-канала по вашему вкусу */
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0s linear 0.3s;
+            z-index: 1;
+        }
 
-      .menu-list li {
-        text-align: center;
-        width: 100%;
-        margin: 10px 0;
-      }
-    }
-  </style>
+        .menu-toggle:checked~.overlay {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #2c2c2c;
+            padding-top: 20px;
+            transition: 0.5s;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-menu li {
+            margin-bottom: 10px;
+        }
+
+        .side-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: block;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .side-menu a:hover {
+            background-color: #555;
+        }
+    </style>
+
 </head>
-<body class="snowfall">
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-  <div class="menu">
-    <label for="menu-toggle">&#9776; Меню</label>
-    <ul class="menu-list">
-      <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
-      <li><a href="about.html"><i class="fas fa-link"></i> Ссылки</a></li>
-      <li><a href=project.html><i class="fas fa-project-diagram"></i> Проекты</a></li>
-    </ul>
-  </div>
-  <input type="checkbox" id="side-menu-toggle" class="menu-toggle">
-  <div class="side-menu">
-  <label for="side-menu-toggle">&#9776; Ссылки</label>
-    <ul>
-      <li><a href="https://t.me/ghosvx"><i class="fab fa-telegram"></i> Telegram</a></li>
-      <li><a href="https://discordapp.com/users/812653804041666581/" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
-      <li><a href="https://www.tiktok.com/@ghosvx"><i class="fab fa-tiktok"></i> TikTok</a></li>
-      <li><a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250"><i class="fas fa-link"></i> Rutracker</a></li>
-      <li><a href="https://www.unknowncheats.me/forum/members/5604845.html"><i class="fas fa-link"></i> UnknownCheats</a></li>
-      <li><a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w"><i class="fab fa-youtube"></i> YouTube</a></li>
-      <li><a href="https://steamcommunity.com/id/Ghosvx/"><i class="fab fa-steam"></i> Steam</a></li>
-      <li><a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e"><i class="fab fa-spotify"></i> Spotify</a></li>
-      <li><a href="https://www.twitch.tv/ghosvx"><i class="fab fa-twitch"></i> Twitch</a></li>
-    </ul>
-  </div>
-  
-  <div class="overlay"></div>
 
-  <header>
-    <h1 id="greeting">BY GHOSVX</h1>
-  </header>
+<body>
+    <div id="container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="menu">
+            <label for="menu-toggle">&#9776; Меню</label>
+            <ul class="menu-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="about.html"><i class="fas fa-link"></i> Ссылки</a></li>
+                <li><a href=project.html><i class="fas fa-project-diagram"></i> Проекты</a></li>
+            </ul>
+        </div>
 
-  <section>
-    <div class="image-container">
-      <div class="blurred-image-container">
-        <img src="pic/xd.png" alt="Description" class="blurred-image">
-        <div class="image-text">Это не мое фото 😐</div>
-      </div>
-      <div class="text-container">
-        <div><h1>Ghosvx или Виталий</h1></div>
-        <div><p>Простой бездельник у которого есть много свободного времени</p></div>
-        <div><p>Опыта в программировании нету и вряд ли будет</p></div>
-        <div><p>Люблю женщин и пельмени</p></div>
-        <div class="color-changing-line"><p>Свободен всегда и в любое время</p></div>
-        <div><p>Живу в <span class="color-changing-text">украине</span>, очень далеко от посетителей этого сайта :></p></div>
-      </div>
+        <div class="overlay"></div>
+
+        <div class="side-menu">
+            <ul>
+                <li><a href="https://t.me/ghosvx"><i class="fab fa-telegram"></i> Telegram</a></li>
+                <li><a href="https://discordapp.com/users/812653804041666581/" target="_blank"><i
+                            class="fab fa-discord"></i> Discord</a></li>
+                <li><a href="https://www.tiktok.com/@ghosvx"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                <li><a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250"><i
+                            class="fas fa-link"></i> Rutracker</a></li>
+                <li><a href="https://www.unknowncheats.me/forum/members/5604845.html"><i
+                            class="fas fa-link"></i> UnknownCheats</a></li>
+                <li><a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w"><i
+                            class="fab fa-youtube"></i> YouTube</a></li>
+                <li><a href="https://steamcommunity.com/id/Ghosvx/"><i class="fab fa-steam"></i> Steam</a></li>
+                <li><a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e"><i
+                            class="fab fa-spotify"></i> Spotify</a></li>
+                <li><a href="https://www.twitch.tv/ghosvx"><i class="fab fa-twitch"></i> Twitch</a></li>
+            </ul>
+        </div>
+
+        <script> src="script/script.js></script>
+        <script src="/script/mobile.js"></script>
+
     </div>
-  </section>
-  
 
-  <div id="msgBox" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeMsgBox()">&times;</span>
-      <img src="/pic/japan.png" alt="Japan Image" class="japan-image">
-      <p>Сайт сделан под управлением Ghosvx'а весь код спизжен у чат гпт</p>
-    </div>
-  </div>
-  
-  <footer>
-    Made in Ukraine. By Ghosvx
-  </footer>
-  
-</script>
-
-  <script src="/script/script.js"></script>
-  <script src="/script/mobile.js"></script>
 </body>
+
 </html>
