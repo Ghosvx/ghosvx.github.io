@@ -1,0 +1,88 @@
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header, section, footer {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+h1, h2 {
+    color: #ffcc00;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #ffcc00;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+a.button:hover {
+    background-color: #ffa500;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+section {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+a.button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.description {
+    flex: 1;
+}
+
+a.button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+a.button.disabled:hover {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.return-button {
+    display: block;
+    margin: 20px;
+    background-color: #FFEB3B;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.return-button:hover {
+    background-color: #FDD835;
+}
