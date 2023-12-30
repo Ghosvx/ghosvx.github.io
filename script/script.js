@@ -181,9 +181,8 @@ function videoTouch(event) {
   // Проверка userAgent на наличие ключевых слов, характерных для мобильных устройств
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  // Проверка ориентации устройства
   if (isMobile && window.screen.orientation && window.screen.orientation.type === 'landscape-primary') {
-    // Устройство находится в горизонтальной ориентации
+
 
     // Запрос на вход в полноэкранный режим
     const { documentElement } = document;
@@ -194,7 +193,6 @@ function videoTouch(event) {
   }
 }
 
-// Привязываем функцию к событию touchstart
 document.body.addEventListener('touchstart', videoTouch);
 
 
