@@ -85,6 +85,11 @@
             color: white; /* Set text color to white */
             border-radius: 10px; /* Add rounded corners to the section */
             font-family: 'Ubuntu', sans-serif;
+            display: none; /* Hide the message box by default */
+        }
+        
+        .custom-msgbox.show {
+            display: block; /* Show the message box when the show class is added */
         }
         
         .custom-msgbox h2 {
@@ -103,6 +108,24 @@
             color: white; /* Set text color to white */
             background-color: #0088cc; /* Set background color to Telegram logo color */
         }
+        
+        .donate-button {
+            background-color: #ff4081; /* Set background color to a pink shade */
+            color: white; /* Set text color to white */
+            padding: 10px 20px; /* Add padding to the button */
+            border-radius: 5px; /* Add rounded corners to the button */
+            text-decoration: none; /* Remove underline from the button */
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px; /* Set font size to 16px */
+            border: none; /* Remove border from the button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            display: inline-flex; /* Display the button as inline-flex */
+            align-items: center; /* Align items vertically */
+        }
+        
+        .donate-button i {
+            margin-right: 5px; /* Add margin to the right of the icon */
+        }
     </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -113,6 +136,16 @@
             el.select();
             document.execCommand('copy');
             document.body.removeChild(el);
+        }
+    
+        function showCustomMessageBox() {
+            const msgBox = document.querySelector('.custom-msgbox');
+            msgBox.classList.add('show');
+        }
+        
+        function closeCustomMessageBox() {
+            const msgBox = document.querySelector('.custom-msgbox');
+            msgBox.classList.remove('show');
         }
     </script>
 </head>
@@ -130,7 +163,7 @@
                 <a href="https://www.tiktok.com/@MS4wLjABAAAApRvVcarin5g_OJVBsRwnlGsX-QIdYgLsyX8ZtuICVwtQlMHjO3PsPde4CnLpRLjD?_t=8ieM6R6bnCd&_r=1" class="social-button tiktok-button"><i class="fab fa-tiktok"></i>Tik Tok</a>
             </div>
             <div class="social-row">
-                <button onclick="showCustomMessageBox()">Donate</button>
+                <button class="donate-button" onclick="showCustomMessageBox()"><i class="fas fa-donate"></i>Donate</button>
             </div>
         </div>
     </section>
@@ -141,46 +174,6 @@
         <button onclick="copyToClipboard(document.getElementById('HECKER459').textContent)">QIWI</button>
         <button onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Adress</button>
         <button onclick="closeCustomMessageBox()">Close</button>
-        <button onclick="editCustomMessageBox()">Edit</button>
     </div>
-
-    <script>
-        function copyToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-        }
-    
-        function showCustomMessageBox() {
-            const msgBox = document.createElement('div');
-            msgBox.classList.add('custom-msgbox');
-
-            
-            const closeButton = document.createElement('button');
-            closeButton.textContent = 'Close';
-            closeButton.addEventListener('click', function() {
-                document.body.removeChild(msgBox);
-            });
-            
-            const editButton = document.createElement('button');
-            editButton.textContent = 'Edit';
-            editButton.addEventListener('click', function() {
-                const editableText = document.createElement('textarea');
-                editableText.value = message.textContent;
-                message.textContent = '';
-                message.appendChild(editableText);
-            });
-            
-            msgBox.appendChild(title);
-            msgBox.appendChild(message);
-            msgBox.appendChild(editButton);
-            msgBox.appendChild(closeButton);
-            
-            document.body.appendChild(msgBox);
-        }
-    </script>
 </body>
 </html>
