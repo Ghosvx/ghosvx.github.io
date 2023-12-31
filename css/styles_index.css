@@ -257,5 +257,12 @@ body.snowfall .snowflake {
   }
 }
 
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
 
 

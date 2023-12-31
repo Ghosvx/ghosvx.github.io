@@ -136,9 +136,16 @@
     <ul class="menu-list">
       <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
       <li><a href="about.html"><i class="fas fa-link"></i> Ссылки</a></li>
-      <li><a href=project.html><i class="fas fa-project-diagram"></i> Проекты</a></li>
+      <li><a href="project.html"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle"><i class="fas fa-users"></i> Социальные сети</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://facebook.com">Facebook</a></li>
+          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://instagram.com">Instagram</a></li>
+        </ul>
+      </li>
     </ul>
-  </div>
 
   
   <div class="overlay"></div>
@@ -182,5 +189,14 @@
 
   <script src="/script/script.js"></script>
   <script src="/script/mobile.js"></script>
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(item => {
+      item.addEventListener('click', event => {
+        event.preventDefault();
+        const menu = item.nextElementSibling;
+        menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
