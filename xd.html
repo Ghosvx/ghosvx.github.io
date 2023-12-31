@@ -135,6 +135,15 @@
         </div>
     </section>
     
+    <div class="custom-msgbox">
+        <h2>Links for donation</h2>
+        <p>Text to copy: <span id="textToCopy">Some text</span></p>
+        <button onclick="copyToClipboard(document.getElementById('HECKER459').textContent)">QIWI</button>
+        <button onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Adress</button>
+        <button onclick="closeCustomMessageBox()">Close</button>
+        <button onclick="editCustomMessageBox()">Edit</button>
+    </div>
+
     <script>
         function copyToClipboard(text) {
             const el = document.createElement('textarea');
@@ -148,12 +157,7 @@
         function showCustomMessageBox() {
             const msgBox = document.createElement('div');
             msgBox.classList.add('custom-msgbox');
-            
-            const title = document.createElement('h2');
-            title.textContent = 'Thank you for your donation!';
-            
-            const message = document.createElement('p');
-            message.textContent = 'Your support means a lot to us.';
+
             
             const closeButton = document.createElement('button');
             closeButton.textContent = 'Close';
@@ -161,8 +165,18 @@
                 document.body.removeChild(msgBox);
             });
             
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.addEventListener('click', function() {
+                const editableText = document.createElement('textarea');
+                editableText.value = message.textContent;
+                message.textContent = '';
+                message.appendChild(editableText);
+            });
+            
             msgBox.appendChild(title);
             msgBox.appendChild(message);
+            msgBox.appendChild(editButton);
             msgBox.appendChild(closeButton);
             
             document.body.appendChild(msgBox);
