@@ -147,6 +147,10 @@
         .qiwi-button {
             background-color: rgb(197, 128, 0); /* Set background color to orange */
         }
+        
+        .ton-button {
+            background-color: #004161; /* Set background color to Telegram logo color */
+        }
     </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -190,9 +194,10 @@
     </section>
     
     <div class="custom-msgbox">
-        <h2>Links for donation</h2>
-        <button onclick="copyToClipboard(document.getElementById('HECKER459').textContent)">QIWI</button>
-        <button onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Adress</button>
+        <h2>Info for donate</h2>
+        <p>Donations only go one way and you don’t have to wait for a refund!</p>
+        <button onclick="copyToClipboard(document.getElementById('HECKER459').textContent)" class="qiwi-button">QIWI</button>
+        <button onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')" class="ton-button">Copy TON Adress</button>
         <div class="donate-row">
             <button onclick="closeCustomMessageBox()">Close</button>
         </div>
