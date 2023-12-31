@@ -3,6 +3,7 @@
 <head>
     <title>Sagarius - Biography</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="xd.ico">
     <style>
         body {
             display: flex;
@@ -103,17 +104,21 @@
         .custom-msgbox button {
             margin: 0 auto;
             padding: 10px 20px; /* Add padding to the buttons */
-            border-radius: 5px; /* Add rounded corners to the buttons */
+            border-radius: 20px; /* Add rounded corners to the buttons */
             text-decoration: none; /* Remove underline from the buttons */
             color: white; /* Set text color to white */
             background-color: #0088cc; /* Set background color to Telegram logo color */
+            border: none; /* Remove border from the buttons */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 16px; /* Set font size to 16px */
         }
         
         .donate-button {
             background-color: #ff4081; /* Set background color to a pink shade */
             color: white; /* Set text color to white */
             padding: 10px 20px; /* Add padding to the button */
-            border-radius: 5px; /* Add rounded corners to the button */
+            border-radius: 20px; /* Add rounded corners to the button */
             text-decoration: none; /* Remove underline from the button */
             font-family: 'Ubuntu', sans-serif;
             font-size: 16px; /* Set font size to 16px */
@@ -130,7 +135,17 @@
         .donate-row {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+        
+        .donation-image {
+            margin-top: 10px;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .qiwi-button {
+            background-color: rgb(197, 128, 0); /* Set background color to orange */
         }
     </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -178,7 +193,10 @@
         <h2>Links for donation</h2>
         <button onclick="copyToClipboard(document.getElementById('HECKER459').textContent)">QIWI</button>
         <button onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Adress</button>
-        <button onclick="closeCustomMessageBox()">Close</button>
+        <div class="donate-row">
+            <button onclick="closeCustomMessageBox()">Close</button>
+        </div>
+        <img src="https://media.tenor.com/qSHC5BriKGsAAAAM/cat-money.gif" alt="Cat Money Gif" class="donation-image">
     </div>
 </body>
 </html>
