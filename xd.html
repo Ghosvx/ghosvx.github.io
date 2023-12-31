@@ -16,7 +16,6 @@
         body {
             font-family: 'Ubuntu', sans-serif;
             position: relative;
-            animation: colorTransition 5s infinite alternate;
         }
 
         body::before {
@@ -29,15 +28,6 @@
             background: linear-gradient(to bottom, rgb(123, 123, 163), black);
             opacity: 0.5;
             z-index: -1;
-        }
-
-        @keyframes colorTransition {
-            0% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 0.2;
-            }
         }
 
         .section {
