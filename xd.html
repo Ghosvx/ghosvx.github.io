@@ -9,6 +9,19 @@
             padding: 0;
             background: linear-gradient(to bottom, rgb(123, 123, 163), black); /* Added gradient background */
             font-family: 'Ubuntu', sans-serif;
+            animation: colorTransition 5s infinite;
+        }
+        
+        @keyframes colorTransition {
+            0% {
+                background-color: rgb(123, 123, 163);
+            }
+            50% {
+                background-color: rgb(0, 0, 0);
+            }
+            100% {
+                background-color: rgb(123, 123, 163);
+            }
         }
         
         .section {
