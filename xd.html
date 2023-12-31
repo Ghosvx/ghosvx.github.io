@@ -80,10 +80,11 @@
             width: 100%;
         }
         
-        img {
+        img.komaru-gif {
             border-radius: 50%;
             margin-top: -50px;
-            animation: rotate 2s infinite linear; /* Add rotation animation */
+            animation: rotate 2s linear; /* Add rotation animation */
+            animation-fill-mode: forwards; /* Keep the final state of the animation */
         }
         
         .custom-msgbox {
@@ -155,7 +156,6 @@
             margin-top: 10px;
             width: 200px;
             height: 200px;
-            animation: bounce 2s infinite; /* Add bounce animation */
         }
         
         .qiwi-button {
@@ -248,7 +248,7 @@
 </head>
 <body>
     <section>
-        <img src="/pic/doc_2023-12-31_18-19-27.gif" alt="Komaru Gif" width="200" height="200">
+        <img src="/pic/doc_2023-12-31_18-19-27.gif" alt="Komaru Gif" width="200" height="200" class="komaru-gif">
         <h1>Sagarius</h1>
         <div class="social-buttons">
             <div class="social-row">
