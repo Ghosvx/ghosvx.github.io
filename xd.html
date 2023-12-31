@@ -39,36 +39,27 @@
         
         .social-button {
             margin: 0 10px;
+            background-color: #1e90ff; /* Set background color to a nice blue */
+            color: white; /* Set text color to white */
             padding: 10px 20px; /* Add padding to the buttons */
             border-radius: 5px; /* Add rounded corners to the buttons */
             text-decoration: none; /* Remove underline from the buttons */
         }
         
-        .telegram-button {
-            background-color: #0088cc; /* Set background color to Telegram logo color */
-            color: white; /* Set text color to white */
+        .social-button i {
+            margin-right: 5px;
         }
         
-        .discord-button {
-            background-color: #7289da; /* Set background color to Discord logo color */
-            color: white; /* Set text color to white */
-        }
-        
-        .steam-button {
-            background-color: #171a21; /* Set background color to Steam logo color */
-            color: white; /* Set text color to white */
-        }
-        
-        .tiktok-button {
-            background-color: #ee1d52; /* Set background color to TikTok logo color */
-            color: white; /* Set text color to white */
+        img {
+            border-radius: 50%; /* Add rounded corners to the image */
+            margin-top: -50px; /* Move the image slightly above the section */
         }
         
         .copy-button {
             width: 100%; /* Set the width of the button to 100% */
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         function copyToClipboard(text) {
             const el = document.createElement('textarea');
@@ -86,12 +77,12 @@
             <h1>Sagarius</h1>
             <div class="social-buttons">
                 <div class="social-row">
-                    <a href="tg://user?id=936463360" class="social-button telegram-button"><i class="fab fa-telegram"></i>Telegram</a>
-                    <a href="https://discordapp.com/users/608241040595484707/" class="social-button discord-button"><i class="fab fa-discord"></i>Discord</a>
+                    <a href="tg://user?id=936463360" class="social-button"><i class="fab fa-telegram"></i>Telegram</a>
+                    <a href="https://discordapp.com/users/608241040595484707/" class="social-button"><i class="fab fa-discord"></i>Discord</a>
                 </div>
                 <div class="social-row">
-                    <a href="https://steamcommunity.com/id/verlity" class="social-button steam-button"><i class="fab fa-steam-symbol"></i>Steam</a>
-                    <a href="https://www.tiktok.com/@MS4wLjABAAAApRvVcarin5g_OJVBsRwnlGsX-QIdYgLsyX8ZtuICVwtQlMHjO3PsPde4CnLpRLjD?_t=8ieM6R6bnCd&_r=1" class="social-button tiktok-button"><i class="fab fa-tiktok"></i>Tik Tok</a>
+                    <a href="https://steamcommunity.com/id/verlity" class="social-button"><i class="fab fa-steam-symbol"></i>Steam</a>
+                    <a href="https://www.tiktok.com/@MS4wLjABAAAApRvVcarin5g_OJVBsRwnlGsX-QIdYgLsyX8ZtuICVwtQlMHjO3PsPde4CnLpRLjD?_t=8ieM6R6bnCd&_r=1" class="social-button"><i class="fab fa-tiktok"></i>Tik Tok</a>
                 </div>
                 <div class="social-row">
                     <a href="#" class="social-button copy-button" onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Address</a>
