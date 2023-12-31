@@ -226,28 +226,26 @@
                 transform: translateY(-20px);
             }
         }
+        
+        /* Mobile optimization */
+        @media only screen and (max-width: 600px) {
+            section {
+                max-width: 90%; /* Adjust max-width for smaller screens */
+            }
+            
+            img.komaru-gif {
+                width: 150px; /* Adjust width for smaller screens */
+                height: 150px; /* Adjust height for smaller screens */
+            }
+            
+            .donation-image {
+                width: 150px; /* Adjust width for smaller screens */
+                height: 150px; /* Adjust height for smaller screens */
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        function copyToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-        }
-    
-        function showCustomMessageBox() {
-            const msgBox = document.querySelector('.custom-msgbox');
-            msgBox.classList.add('show');
-        }
-        
-        function closeCustomMessageBox() {
-            const msgBox = document.querySelector('.custom-msgbox');
-            msgBox.classList.remove('show');
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <section>
@@ -278,5 +276,26 @@
         </div>
         <img src="https://media.tenor.com/qSHC5BriKGsAAAAM/cat-money.gif" alt="Cat Money Gif" class="donation-image">
     </div>
+    
+    <script>
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+    
+        function showCustomMessageBox() {
+            const msgBox = document.querySelector('.custom-msgbox');
+            msgBox.classList.add('show');
+        }
+        
+        function closeCustomMessageBox() {
+            const msgBox = document.querySelector('.custom-msgbox');
+            msgBox.classList.remove('show');
+        }
+    </script>
 </body>
 </html>
