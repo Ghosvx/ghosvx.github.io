@@ -10,11 +10,11 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow: hidden;
         }
 
         body {
             font-family: 'Ubuntu', sans-serif;
-            overflow: hidden; /* чтобы избежать прокрутки */
         }
 
         body::before {
@@ -25,18 +25,15 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgb(123, 123, 163), black);
-            animation: colorTransition 5s infinite;
+            animation: colorTransition 5s infinite alternate;
         }
 
         @keyframes colorTransition {
             0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
+                background: linear-gradient(to bottom, rgb(123, 123, 163), black);
             }
             100% {
-                background-position: 0% 0%;
+                background: linear-gradient(to bottom, black, rgb(123, 123, 163));
             }
         }
 
