@@ -134,6 +134,32 @@
         margin: 10px 0;
       }
     }
+
+    /* Added styles */
+    .social-menu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      z-index: 2;
+    }
+
+    .social-menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease-out;
+    }
+
+    .social-menu a:hover {
+      color: #808080;
+    }
+
+    .social-menu i {
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body class="snowfall">
@@ -155,6 +181,14 @@
     </ul>
   </div>
 
+  <div class="social-menu">
+    <a href="#"><i class="fas fa-share-alt"></i> Социальные сети</a>
+    <ul class="menu-list">
+      <li><a href="https://www.facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
+      <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+      <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+    </ul>
+  </div>
   
   <div class="overlay"></div>
 
@@ -177,20 +211,6 @@
         <div><p>Живу в <span class="color-changing-text">украине</span>, очень далеко от посетителей этого сайта :></p></div>
       </div>
     </div>
-  </section>
-  
-
-  <div id="msgBox" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeMsgBox()">&times;</span>
-      <img src="/pic/japan.png" alt="Japan Image" class="japan-image">
-      <p>Сайт сделан под управлением Ghosvx'а весь код спизжен у чат гпт</p>
-    </div>
-  </div>
-  
-  <footer>
-    Made in Ukraine. By Ghosvx
-  </footer>
 
 
 </script>
