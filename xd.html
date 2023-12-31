@@ -49,16 +49,25 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+    </script>
 </head>
 <body>
     <section>
             <img src="/pic/doc_2023-12-31_18-19-27.gif" alt="Komaru Gif" width="200" height="200">
             <h1>Sagarius</h1>
             <div class="social-buttons">
-                <a href="#" class="social-button"><i class="fab fa-facebook-f"></i>Facebook</a>
-                <a href="#" class="social-button"><i class="fab fa-twitter"></i>Twitter</a>
-                <a href="#" class="social-button"><i class="fab fa-instagram"></i>Instagram</a>
-                <a href="#" class="social-button"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+                <a href="t.me/#936463360" class="social-button"><i class="fab fa-telegram"></i>Telegram</a>
+                <a href="пожалуйста вставь сюда ссылку" class="social-button"><i class="fab fa-steam-symbol"></i>Steam</a>
+                <a href="#" class="social-button" onclick="copyToClipboard('')"><i class="fas fa-wallet"></i>TON Adress</a>
             </div>
     </section>
 </body>
