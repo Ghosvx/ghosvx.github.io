@@ -8,6 +8,8 @@
             border: 2px solid white; /* Set border color to white */
             padding: 20px;
             text-align: center;
+            height: 400px; /* Set height to 400px */
+            color: white; /* Set text color to white */
         }
         
         .social-buttons {
@@ -18,8 +20,18 @@
         
         .social-button {
             margin: 0 10px;
+            background-color: #1e90ff; /* Set background color to a nice blue */
+            color: white; /* Set text color to white */
+            padding: 10px 20px; /* Add padding to the buttons */
+            border-radius: 5px; /* Add rounded corners to the buttons */
+            text-decoration: none; /* Remove underline from the buttons */
+        }
+        
+        .social-button i {
+            margin-right: 5px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -27,10 +39,10 @@
         <h1>Sagarius</h1>
         <p>Biography</p>
         <div class="social-buttons">
-            <a href="#" class="social-button">Facebook</a>
-            <a href="#" class="social-button">Twitter</a>
-            <a href="#" class="social-button">Instagram</a>
-            <a href="#" class="social-button">LinkedIn</a>
+            <a href="#" class="social-button"><i class="fab fa-facebook-f"></i>Facebook</a>
+            <a href="#" class="social-button"><i class="fab fa-twitter"></i>Twitter</a>
+            <a href="#" class="social-button"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="#" class="social-button"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
         </div>
     </header>
 </body>
