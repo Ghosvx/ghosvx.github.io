@@ -75,6 +75,34 @@
             border-radius: 50%; /* Add rounded corners to the image */
             margin-top: -50px; /* Move the image slightly above the section */
         }
+        
+        .custom-msgbox {
+            background-color: #333; /* Set background color to a darker shade of black */
+            border: 2px solid white; /* Set border color to white */
+            padding: 20px;
+            text-align: center;
+            width: 400px; /* Set width to 400px */
+            color: white; /* Set text color to white */
+            border-radius: 10px; /* Add rounded corners to the section */
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        .custom-msgbox h2 {
+            margin-bottom: 10px;
+        }
+        
+        .custom-msgbox p {
+            margin-bottom: 20px;
+        }
+        
+        .custom-msgbox button {
+            margin: 0 auto;
+            padding: 10px 20px; /* Add padding to the buttons */
+            border-radius: 5px; /* Add rounded corners to the buttons */
+            text-decoration: none; /* Remove underline from the buttons */
+            color: white; /* Set text color to white */
+            background-color: #0088cc; /* Set background color to Telegram logo color */
+        }
     </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -90,21 +118,55 @@
 </head>
 <body>
     <section>
-            <img src="/pic/doc_2023-12-31_18-19-27.gif" alt="Komaru Gif" width="200" height="200">
-            <h1>Sagarius</h1>
-            <div class="social-buttons">
-                <div class="social-row">
-                    <a href="tg://user?id=936463360" class="social-button telegram-button"><i class="fab fa-telegram"></i>Telegram</a>
-                    <a href="https://discordapp.com/users/608241040595484707/" class="social-button discord-button"><i class="fab fa-discord"></i>Discord</a>
-                </div>
-                <div class="social-row">
-                    <a href="https://steamcommunity.com/id/verlity" class="social-button steam-button"><i class="fab fa-steam-symbol"></i>Steam</a>
-                    <a href="https://www.tiktok.com/@MS4wLjABAAAApRvVcarin5g_OJVBsRwnlGsX-QIdYgLsyX8ZtuICVwtQlMHjO3PsPde4CnLpRLjD?_t=8ieM6R6bnCd&_r=1" class="social-button tiktok-button"><i class="fab fa-tiktok"></i>Tik Tok</a>
-                </div>
-                <div class="social-row">
-                    <a href="#" class="social-button copy-button" onclick="copyToClipboard('EQAnUm6XFajM7NjDGzPXYopDcqBTBWMyPjiCfP718j69ffpa')">Copy TON Address</a>
-                </div>
+        <img src="/pic/doc_2023-12-31_18-19-27.gif" alt="Komaru Gif" width="200" height="200">
+        <h1>Sagarius</h1>
+        <div class="social-buttons">
+            <div class="social-row">
+                <a href="tg://user?id=936463360" class="social-button telegram-button"><i class="fab fa-telegram"></i>Telegram</a>
+                <a href="https://discordapp.com/users/608241040595484707/" class="social-button discord-button"><i class="fab fa-discord"></i>Discord</a>
             </div>
+            <div class="social-row">
+                <a href="https://steamcommunity.com/id/verlity" class="social-button steam-button"><i class="fab fa-steam-symbol"></i>Steam</a>
+                <a href="https://www.tiktok.com/@MS4wLjABAAAApRvVcarin5g_OJVBsRwnlGsX-QIdYgLsyX8ZtuICVwtQlMHjO3PsPde4CnLpRLjD?_t=8ieM6R6bnCd&_r=1" class="social-button tiktok-button"><i class="fab fa-tiktok"></i>Tik Tok</a>
+            </div>
+            <div class="social-row">
+                <button onclick="showCustomMessageBox()">Donate</button>
+            </div>
+        </div>
     </section>
+    
+    <script>
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+    
+        function showCustomMessageBox() {
+            const msgBox = document.createElement('div');
+            msgBox.classList.add('custom-msgbox');
+            
+            const title = document.createElement('h2');
+            title.textContent = 'Thank you for your donation!';
+            
+            const message = document.createElement('p');
+            message.textContent = 'Your support means a lot to us.';
+            
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.addEventListener('click', function() {
+                document.body.removeChild(msgBox);
+            });
+            
+            msgBox.appendChild(title);
+            msgBox.appendChild(message);
+            msgBox.appendChild(closeButton);
+            
+            document.body.appendChild(msgBox);
+        }
+    </script>
 </body>
 </html>
