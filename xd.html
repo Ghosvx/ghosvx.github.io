@@ -23,6 +23,7 @@
             color: white; /* Set text color to white */
             border-radius: 10px; /* Add rounded corners to the section */
             font-family: 'Ubuntu', sans-serif;
+            animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
         }
         
         .social-buttons {
@@ -33,70 +34,73 @@
         }
         
         .social-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            animation: slideInLeft 1s ease-in-out; /* Add slide-in animation */
+        }
 
-.social-button {
-    margin: 5px; /* Увеличено расстояние между кнопками */
-    padding: 5px 10px; /* Уменьшено значение padding */
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 150px; /* Установлено максимальное значение ширины */
-    width: 100%; /* Ширина будет растягиваться до максимального значения */
-}
-
+        .social-button {
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 150px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+        }
         
         .social-button i {
             margin-right: 5px;
         }
         
         .telegram-button {
-            background-color: #0088cc; /* Set background color to Telegram logo color */
+            background-color: #0088cc;
         }
         
         .discord-button {
-            background-color: #7289da; /* Set background color to Discord logo color */
+            background-color: #7289da;
         }
         
         .steam-button {
-            background-color: #01002e; /* Set background color to Steam logo color */
+            background-color: #01002e;
         }
         
         .tiktok-button {
-            background-color: #e200b1; /* Set background color to TikTok logo color */
+            background-color: #e200b1;
         }
         
         .copy-button {
-            background-color: rgb(93, 34, 255); /* Set background color to white */
-            color: black; /* Set text color to black */
-            width: 100%; /* Set the width of the button to 100% */
+            background-color: rgb(93, 34, 255);
+            color: black;
+            width: 100%;
         }
         
         img {
-            border-radius: 50%; /* Add rounded corners to the image */
-            margin-top: -50px; /* Move the image slightly above the section */
+            border-radius: 50%;
+            margin-top: -50px;
+            animation: rotate 2s infinite linear; /* Add rotation animation */
         }
         
         .custom-msgbox {
-            background-color: #333; /* Set background color to a darker shade of black */
-            border: 2px solid white; /* Set border color to white */
+            background-color: #333;
+            border: 2px solid white;
             padding: 20px;
             text-align: center;
-            width: 400px; /* Set width to 400px */
-            color: white; /* Set text color to white */
-            border-radius: 10px; /* Add rounded corners to the section */
+            width: 400px;
+            color: white;
+            border-radius: 10px;
             font-family: 'Ubuntu', sans-serif;
-            display: none; /* Hide the message box by default */
+            display: none;
+            animation: slideInBottom 1s ease-in-out; /* Add slide-in animation */
         }
         
         .custom-msgbox.show {
-            display: block; /* Show the message box when the show class is added */
+            display: block;
         }
         
         .custom-msgbox h2 {
@@ -109,34 +113,36 @@
         
         .custom-msgbox button {
             margin: 0 auto;
-            padding: 10px 20px; /* Add padding to the buttons */
-            border-radius: 20px; /* Add rounded corners to the buttons */
-            text-decoration: none; /* Remove underline from the buttons */
-            color: white; /* Set text color to white */
-            background-color: #0088cc; /* Set background color to Telegram logo color */
-            border: none; /* Remove border from the buttons */
-            cursor: pointer; /* Change cursor to pointer on hover */
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #0088cc;
+            border: none;
+            cursor: pointer;
             font-family: 'Ubuntu', sans-serif;
-            font-size: 16px; /* Set font size to 16px */
+            font-size: 16px;
+            animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
         }
         
         .donate-button {
-            background-color: #ff4081; /* Set background color to a pink shade */
-            color: white; /* Set text color to white */
-            padding: 10px 40px; /* Add padding to the button */
-            border-radius: 20px; /* Add rounded corners to the button */
-            text-decoration: none; /* Remove underline from the button */
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 40px;
+            border-radius: 20px;
+            text-decoration: none;
             font-family: 'Ubuntu', sans-serif;
-            font-size: 16px; /* Set font size to 16px */
-            border: none; /* Remove border from the button */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            display: inline-flex; /* Display the button as inline-flex */
-            align-items: center; /* Align items vertically */
-            justify-content: center; /* Align items horizontally */
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite; /* Add pulse animation */
         }
         
         .donate-button i {
-            margin-right: 5px; /* Add margin to the right of the icon */
+            margin-right: 5px;
         }
         
         .donate-row {
@@ -149,17 +155,76 @@
             margin-top: 10px;
             width: 200px;
             height: 200px;
+            animation: bounce 2s infinite; /* Add bounce animation */
         }
         
         .qiwi-button {
-            background-color: rgb(197, 128, 0); /* Set background color to orange */
+            background-color: rgb(197, 128, 0);
         }
         
         .ton-button {
-            background-color: #004161; /* Set background color to Telegram logo color */
+            background-color: #004161;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInBottom {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         function copyToClipboard(text) {
             const el = document.createElement('textarea');
