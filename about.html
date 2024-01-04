@@ -376,6 +376,11 @@
       video.pause();
     });
 
+    // Add this code to handle video playback error
+    video.addEventListener('error', () => {
+      loader.classList.add('hide');
+    });
+
     video.addEventListener('ended', () => {
       loader.classList.add('hide');
     });
