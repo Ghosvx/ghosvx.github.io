@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -373,6 +373,12 @@ video.addEventListener('loadedmetadata', function() {
     video.currentTime = 0;
     video.play();
   }, { once: true });
+
+  // Добавляем обработчик события 'loadeddata' для сброса текущего времени видео
+  video.addEventListener('loadeddata', function() {
+    video.currentTime = 0;
+    loader.classList.add('hide'); // Скрываем loader после загрузки видео
+  }, { once: true });
 });
 
 window.addEventListener('beforeunload', function() {
@@ -386,6 +392,11 @@ video.addEventListener('error', function() {
 
 video.addEventListener('ended', function() {
   loader.classList.add('hide');
+});
+
+// Добавляем обработчик события 'load' для показа loader при загрузке страницы
+window.addEventListener('load', function() {
+  loader.classList.remove('hide');
 });
   </script>
 </body>
