@@ -305,7 +305,7 @@
 </head>
 <body>
   <div class="loader">
-    <video src="/pic/logo.mp4" autoplay loop></video>
+    <video src="/pic/logo.mp4" autoplay></video>
   </div>
 
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -354,6 +354,11 @@
   <script>
     const loader = document.querySelector('.loader');
     const video = document.querySelector('.loader video');
+
+    // Add this code to play the video
+    video.addEventListener('canplay', () => {
+      video.play();
+    });
 
     video.addEventListener('ended', () => {
       loader.style.display = 'none';
