@@ -366,38 +366,36 @@
 const loader = document.querySelector('.loader');
 const video = document.querySelector('.loader video');
 
+// Добавим обработчик события 'load' для показа loader при загрузке страницы
+window.addEventListener('load', function() {
+  loader.classList.remove('hide');
+});
+
 video.addEventListener('loadedmetadata', function() {
-  // Добавляем обработчик события 'canplaythrough' для того, чтобы убедиться,
-  // что достаточно данных загружено для непрерывного воспроизведения
+  // Добавим обработчик события 'canplaythrough' для воспроизведения видео и скрытия loader после загрузки
   video.addEventListener('canplaythrough', function() {
     video.currentTime = 0;
     video.play();
-  }, { once: true });
-
-  // Добавляем обработчик события 'loadeddata' для сброса текущего времени видео
-  video.addEventListener('loadeddata', function() {
-    video.currentTime = 0;
-    loader.classList.add('hide'); // Скрываем loader после загрузки видео
+    loader.classList.add('hide');
   }, { once: true });
 });
 
+// Обработчик ошибок
+video.addEventListener('error', function() {
+  loader.classList.add('hide');
+});
+
+// Обработчик завершения воспроизведения
+video.addEventListener('ended', function() {
+  loader.classList.add('hide');
+});
+
+// Обработчик события beforeunload для сброса состояния видео при обновлении страницы
 window.addEventListener('beforeunload', function() {
   video.pause();
   video.currentTime = 0;
 });
 
-video.addEventListener('error', function() {
-  loader.classList.add('hide');
-});
-
-video.addEventListener('ended', function() {
-  loader.classList.add('hide');
-});
-
-// Добавляем обработчик события 'load' для показа loader при загрузке страницы
-window.addEventListener('load', function() {
-  loader.classList.remove('hide');
-});
   </script>
 </body>
 </html> 
