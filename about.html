@@ -364,35 +364,38 @@
   <script src="/script/script_about.js"></script>
   <script src="/script/mobile.js"></script>
   <script>
-const loader = document.querySelector('.loader');
-const video = document.querySelector('.loader video');
+    const loader = document.querySelector('.loader');
+    const video = document.querySelector('.loader video');
 
-window.addEventListener('load', function() {
-  loader.classList.remove('hide');
-});
+    // Check if the page is being loaded for the first time or being refreshed
+    if (performance.navigation.type === 1) {
+      // Page is being refreshed, hide the loader immediately
+      loader.classList.add('hide');
+    } else {
+      // Page is being loaded for the first time, show the loader until the video is loaded
+      window.addEventListener('load', function() {
+        loader.classList.remove('hide');
+      });
 
-video.addEventListener('loadedmetadata', function() {
-  // Установим обработчик события play для воспроизведения видео и скрытия loader после загрузки
-  video.addEventListener('play', function() {
-    loader.classList.add('hide');
-  }, { once: true });
-});
+      video.addEventListener('loadedmetadata', function() {
+        video.addEventListener('play', function() {
+          loader.classList.add('hide');
+        }, { once: true });
+      });
 
-// Обработчик ошибок
-video.addEventListener('error', function() {
-  loader.classList.add('hide');
-});
+      video.addEventListener('error', function() {
+        loader.classList.add('hide');
+      });
 
-// Обработчик завершения воспроизведения
-video.addEventListener('ended', function() {
-  loader.classList.add('hide');
-});
+      video.addEventListener('ended', function() {
+        loader.classList.add('hide');
+      });
 
-// Обработчик события beforeunload для сброса состояния видео при обновлении страницы
-window.addEventListener('beforeunload', function() {
-  video.pause();
-  video.currentTime = 0;
-});
+      window.addEventListener('beforeunload', function() {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
   </script>
 </body>
 </html> 
