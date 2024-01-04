@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.50">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/pic/favicon.ico">
   <title>Ссылки</title>
   <link rel="stylesheet" href="/css/styles_about.css">
@@ -10,9 +10,127 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+    
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .bio {
+      margin-bottom: 20px;
+    }
+    
+    .links {
+      margin-top: 20px;
+    }
+    
+    .social-button {
+      display: inline-block;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    
+    .social-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .telegram {
+      background-color: #0088cc;
+    }
+    
+    .telegram:hover {
+      background-color: #005580;
+    }
+    
+    .discord {
+      background-color: #7289da;
+    }
+    
+    .discord:hover {
+      background-color: #677bc4;
+    }
+    
+    .tiktok {
+      background-color: #6f42c1;
+    }
+    
+    .tiktok:hover {
+      background-color: #5d3aae;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+    
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: #555;
+      transition: background-color 0.3s ease;
+    }
+    
+    footer a:hover {
+      background-color: #777;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      header {
+        font-size: 1.5em;
+      }
+    
+      section {
+        padding: 10px;
+        margin: 10px;
+      }
+    
+      .social-button {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="snowfall"></div>
   <header>
     <h1>Ссылки</h1>
   </header>
@@ -28,14 +146,12 @@
       <a href="https://www.tiktok.com/@ghosvx" class="social-button tiktok">TikTok</a>
     </div>
 	
-  <a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250" class="social-button rutrackerlink">Rutracker</a>
-  <a href="https://www.unknowncheats.me/forum/members/5604845.html" class="social-button uknowncheatslink">UknownCheats</a>
-  <a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w" class="social-button youtube-link">YouTube</a>
-  <a href="https://steamcommunity.com/id/Ghosvx/" class="social-button steam-link">Steam</a>
-  <a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e" class="social-button spotify-link">Spotify</a>
-  <a href="https://www.twitch.tv/ghosvx" class="social-button twitch-link">Twitch</a>
-</div>
-
+    <a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250" class="social-button rutrackerlink">Rutracker</a>
+    <a href="https://www.unknowncheats.me/forum/members/5604845.html" class="social-button uknowncheatslink">UknownCheats</a>
+    <a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w" class="social-button youtube-link">YouTube</a>
+    <a href="https://steamcommunity.com/id/Ghosvx/" class="social-button steam-link">Steam</a>
+    <a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e" class="social-button spotify-link">Spotify</a>
+    <a href="https://www.twitch.tv/ghosvx" class="social-button twitch-link">Twitch</a>
   </section>
 
   <footer>
