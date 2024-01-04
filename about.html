@@ -15,8 +15,10 @@
       font-family: 'Ubuntu', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #333;
-      color: #fff;
+      background-image: url("/pic/back.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -38,6 +40,7 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      position: relative; /* Added */
     }
     
     .bio {
@@ -212,6 +215,24 @@
       opacity: 1;
       transition: opacity 0.3s;
     }
+
+    /* Added */
+    .avatar {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      overflow: hidden;
+      width: 100px;
+      height: 100px;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 </style>
 </head>
 <body>
@@ -229,6 +250,9 @@
   </header>
 
   <section>
+    <div class="avatar">
+      <img src="/pic/sawatori.jpeg" alt="Avatar">
+    </div>
     <div class="bio">
       <h1>Ghosvx</h1>
     </div>
