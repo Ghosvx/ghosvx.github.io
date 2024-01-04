@@ -371,6 +371,11 @@
       video.play();
     });
 
+    // Add this code to handle page refresh
+    window.addEventListener('beforeunload', () => {
+      video.pause();
+    });
+
     video.addEventListener('ended', () => {
       loader.classList.add('hide');
     });
