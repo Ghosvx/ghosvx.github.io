@@ -235,6 +235,20 @@
       <li><a href="/project"><i class="fas fa-project-diagram"></i> Проекты</a></li>
     </ul>
   </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuList = document.querySelector('.menu-list');
+
+    menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+        menuList.style.display = 'block';
+      } else {
+        menuList.style.display = 'none';
+      }
+    });
+  </script>
+  
 </body>
 </html>
 <style>
