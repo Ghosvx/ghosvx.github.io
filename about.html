@@ -367,8 +367,12 @@ const loader = document.querySelector('.loader');
 const video = document.querySelector('.loader video');
 
 video.addEventListener('loadedmetadata', function() {
-  video.currentTime = 0;
-  video.play();
+  // Добавляем обработчик события 'canplaythrough' для того, чтобы убедиться,
+  // что достаточно данных загружено для непрерывного воспроизведения
+  video.addEventListener('canplaythrough', function() {
+    video.currentTime = 0;
+    video.play();
+  }, { once: true });
 });
 
 window.addEventListener('beforeunload', function() {
