@@ -168,3 +168,87 @@
 
 </body>
 </html>
+<style>
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-toggle + label {
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-list li {
+    margin-right: 20px;
+  }
+
+  .menu-list li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-list li a i {
+    margin-right: 5px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .menu {
+      padding: 10px 20px;
+    }
+
+    .menu-list {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .menu-toggle:checked ~ .menu-list {
+      display: block;
+    }
+
+    .menu-toggle + label::after {
+      content: '\f00d';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-left: 5px;
+    }
+
+    .menu-toggle:checked + label::after {
+      content: '\f00c';
+    }
+  }
+</style>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<div class="menu">
+  <label for="menu-toggle">&#9776; Меню</label>
+  <ul class="menu-list">
+    <li><a href="/" onclick="showCustomMessage()"><i class="fas fa-home"></i> Главная</a></li>
+    <li><a href="/about"><i class="fas fa-link"></i> Ссылки</a></li>
+    <li><a href="/project"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+  </ul>
+</div>
