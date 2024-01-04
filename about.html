@@ -366,31 +366,22 @@
 const loader = document.querySelector('.loader');
 const video = document.querySelector('.loader video');
 
-// Добавить обработчик для события 'loadedmetadata'
-video.addEventListener('loadedmetadata', () => {
-  video.currentTime = 0; // Установить текущее время в 0
+video.addEventListener('loadedmetadata', function() {
+  video.currentTime = 0;
   video.play();
 });
 
-// Добавить обработчик для события 'beforeunload'
-window.addEventListener('beforeunload', () => {
+window.addEventListener('beforeunload', function() {
   video.pause();
+  video.currentTime = 0;
 });
 
-// Добавить обработчик для события 'error'
-video.addEventListener('error', () => {
+video.addEventListener('error', function() {
   loader.classList.add('hide');
 });
 
-// Добавить обработчик для события 'ended'
-video.addEventListener('ended', () => {
+video.addEventListener('ended', function() {
   loader.classList.add('hide');
-});
-
-// Добавить обработчик для события 'canplaythrough' для случая, когда видео уже загружено
-video.addEventListener('canplaythrough', () => {
-  video.currentTime = 0; // Установить текущее время в 0
-  video.play();
 });
   </script>
 </body>
