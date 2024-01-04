@@ -362,28 +362,29 @@
   <script src="/script/script_about.js"></script>
   <script src="/script/mobile.js"></script>
   <script>
-    const loader = document.querySelector('.loader');
-    const video = document.querySelector('.loader video');
+  const loader = document.querySelector('.loader');
+  const video = document.querySelector('.loader video');
 
-    // Add this code to play the video
-    video.addEventListener('canplay', () => {
-      video.currentTime = 0; // Set the current time to 0
-      video.play();
-    });
+// Добавить обработчик для события 'loadeddata'
+  video.addEventListener('loadeddata', () => {
+  video.currentTime = 0; // Установить текущее время в 0
+  video.play();
+});
 
-    // Add this code to handle page refresh
-    window.addEventListener('beforeunload', () => {
-      video.pause();
-    });
+// Добавить обработчик для события 'beforeunload'
+window.addEventListener('beforeunload', () => {
+  video.pause();
+});
 
-    // Add this code to handle video playback error
-    video.addEventListener('error', () => {
-      loader.classList.add('hide');
-    });
+// Добавить обработчик для события 'error'
+video.addEventListener('error', () => {
+  loader.classList.add('hide');
+});
 
-    video.addEventListener('ended', () => {
-      loader.classList.add('hide');
-    });
+// Добавить обработчик для события 'ended'
+video.addEventListener('ended', () => {
+  loader.classList.add('hide');
+});
   </script>
 </body>
 </html> 
