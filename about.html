@@ -372,12 +372,9 @@ window.addEventListener('load', function() {
 });
 
 video.addEventListener('loadedmetadata', function() {
-  // Скрываем loader после загрузки видео
-  loader.classList.add('hide');
-
-  // Добавляем обработчик события 'canplay' для воспроизведения видео
-  video.addEventListener('canplay', function() {
-    video.play();
+  // Установим обработчик события play для воспроизведения видео и скрытия loader после загрузки
+  video.addEventListener('play', function() {
+    loader.classList.add('hide');
   }, { once: true });
 });
 
@@ -394,8 +391,8 @@ video.addEventListener('ended', function() {
 // Обработчик события beforeunload для сброса состояния видео при обновлении страницы
 window.addEventListener('beforeunload', function() {
   video.pause();
-  video.currentTime = 0
-});  
+  video.currentTime = 0;
+});
   </script>
 </body>
 </html> 
