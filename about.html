@@ -371,11 +371,14 @@ window.addEventListener('load', function() {
   loader.classList.remove('hide');
 });
 
-// Обработчик события canplay для воспроизведения видео и скрытия loader после загрузки
-video.addEventListener('canplay', function() {
-  video.currentTime = 0;
-  video.play();
+video.addEventListener('loadedmetadata', function() {
+  // Скрываем loader после загрузки видео
   loader.classList.add('hide');
+
+  // Добавляем обработчик события 'canplay' для воспроизведения видео
+  video.addEventListener('canplay', function() {
+    video.play();
+  }, { once: true });
 });
 
 // Обработчик ошибок
@@ -391,8 +394,8 @@ video.addEventListener('ended', function() {
 // Обработчик события beforeunload для сброса состояния видео при обновлении страницы
 window.addEventListener('beforeunload', function() {
   video.pause();
-  video.currentTime = 0;
-});
+  video.currentTime = 0
+});  
   </script>
 </body>
 </html> 
