@@ -362,11 +362,11 @@
   <script src="/script/script_about.js"></script>
   <script src="/script/mobile.js"></script>
   <script>
-  const loader = document.querySelector('.loader');
-  const video = document.querySelector('.loader video');
+const loader = document.querySelector('.loader');
+const video = document.querySelector('.loader video');
 
-// Добавить обработчик для события 'loadeddata'
-  video.addEventListener('loadeddata', () => {
+// Добавить обработчик для события 'loadedmetadata'
+video.addEventListener('loadedmetadata', () => {
   video.currentTime = 0; // Установить текущее время в 0
   video.play();
 });
@@ -384,6 +384,12 @@ video.addEventListener('error', () => {
 // Добавить обработчик для события 'ended'
 video.addEventListener('ended', () => {
   loader.classList.add('hide');
+});
+
+// Добавить обработчик для события 'canplaythrough' для случая, когда видео уже загружено
+video.addEventListener('canplaythrough', () => {
+  video.currentTime = 0; // Установить текущее время в 0
+  video.play();
 });
   </script>
 </body>
