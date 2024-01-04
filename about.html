@@ -282,8 +282,32 @@
       object-fit: cover;
     }
 </style>
+<style>
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .loader video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>
 </head>
 <body>
+  <div class="loader">
+    <video src="/pic/logo.mp4" autoplay loop></video>
+  </div>
+
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
   <div class="menu">
     <label for="menu-toggle">&#9776; Меню</label>
@@ -327,7 +351,14 @@
 
   <script src="/script/script_about.js"></script>
   <script src="/script/mobile.js"></script>
+  <script>
+    const loader = document.querySelector('.loader');
+    const video = document.querySelector('.loader video');
 
+    video.addEventListener('ended', () => {
+      loader.style.display = 'none';
+    });
+  </script>
 
 </body>
-</html>
+</html>  
