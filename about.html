@@ -281,6 +281,10 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .bio {
+      margin-bottom: 40px; /* Increased margin */
+    }
 </style>
 <style>
     .loader {
@@ -335,8 +339,7 @@
     <div class="bio">
       <h1>Ghosvx</h1>
     </div>
-
-
+  
     <div class="links">
       <div>
         <a href="https://t.me/ghosvx" class="social-button telegram"><i class="fab fa-telegram"></i> Telegram</a>
@@ -364,6 +367,7 @@
 
     // Add this code to play the video
     video.addEventListener('canplay', () => {
+      video.currentTime = 0; // Set the current time to 0
       video.play();
     });
 
@@ -371,6 +375,5 @@
       loader.classList.add('hide');
     });
   </script>
-
 </body>
-</html>  
+</html> 
