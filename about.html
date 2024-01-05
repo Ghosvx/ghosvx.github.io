@@ -24,17 +24,22 @@
     }
   
     .avatar {
-      margin-bottom: 40px; /* Increased margin */
-      position: relative; /* Added */
-      z-index: 1; /* Added */
-    }
-  
-    .avatar-image {
-      position: relative; /* Added */
-      z-index: 2; /* Added */
-      margin-top: -20px; /* Added */
-      margin-bottom: -20px; /* Added */
-    }
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%; /* Added */
+    width: 200px; /* Added */
+    height: 200px; /* Added */
+    overflow: hidden; /* Added */
+  }
+
+  .avatar-image {
+    position: relative;
+    z-index: 2;
+    width: 100%; /* Added */
+    height: 100%; /* Added */
+    object-fit: cover; /* Added */
+  }
   </style>
 
 <style>
