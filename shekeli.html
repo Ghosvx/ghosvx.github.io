@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Донат</h1>
+    <ul>
+        <li><a href="https://new.donatepay.ru/@1202095">DonatePay</a> для пользователей со всех стран</li>
+        <li><a href="/">Donationalerts</a>Для пользователей с рашки</li>
+    </ul>
+    <button onclick="copyToClipboard('UQC6w1eb85b4RahoEQypUEh4xsX4SU141YutSoKMT1LC92SR')">Copy TON Address</button>
+    <p>Roblox: <a href="https://www.roblox.com/games/13242041191/GAMEPASSES-FOR-DONATE#!/store">Roblox</a> для пользователей у которых карты нету</p>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('скопировано успешно');
+        }
+    </script>
+</body>
+</html>
