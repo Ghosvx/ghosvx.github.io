@@ -316,51 +316,39 @@
     </ul>
   </div>
 
-  <section></section>
-    <div class="avatar"></div>
+  <section>
+    <div class="avatar">
       <img src="/pic/Sawatori.jpeg" alt="Avatar" class="avatar-image">
     </div>
-    <div class="bio"></div>
+    <div class="bio">
       <h1>Ghosvx</h1>
     </div>
 
-    <div class="links"></div>
-      <div></div>
+    <div class="links">
+      <div>
         <a href="https://t.me/ghosvx" class="social-button telegram"><i class="fab fa-telegram"></i> Telegram</a>
-        <a href="https://discordapp.com/users/812653804041666581/" target="_blank" class="social-button
-    <section>
-      <div class="avatar">
-        <img src="/pic/Sawatori.jpeg" alt="Avatar" class="avatar-image">
+        <a href="https://discordapp.com/users/812653804041666581/" target="_blank" class="social-button discord"><i class="fab fa-discord"></i> Discord</a>
+        <a href="https://www.tiktok.com/@ghosvx" class="social-button tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
       </div>
-      <div class="bio">
-        <h1>Ghosvx</h1>
+      <div>
+        <a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250" class="social-button rutrackerlink"><i class="fas fa-star"></i> Rutracker</a>
+        <a href="https://www.unknowncheats.me/forum/members/5604845.html" class="social-button uknowncheatslink"><i class="fas fa-horseshoe"></i> UknownCheats</a>
+        <a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w" class="social-button youtube-link"><i class="fab fa-youtube"></i> YouTube</a>
       </div>
-    
-      <div class="links"> <!-- Этот div был перемещен сюда -->
-        <div>
-          <a href="https://t.me/ghosvx" class="social-button telegram"><i class="fab fa-telegram"></i> Telegram</a>
-          <a href="https://discordapp.com/users/812653804041666581/" target="_blank" class="social-button discord"><i class="fab fa-discord"></i> Discord</a>
-          <a href="https://www.tiktok.com/@ghosvx" class="social-button tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-        </div>
-        <div>
-          <a href="https://rutracker.org/forum/profile.php?mode=viewprofile&u=48328250" class="social-button rutrackerlink"><i class="fas fa-star"></i> Rutracker</a>
-          <a href="https://www.unknowncheats.me/forum/members/5604845.html" class="social-button uknowncheatslink"><i class="fas fa-horseshoe"></i> UknownCheats</a>
-          <a href="https://www.youtube.com/channel/UCO9-PeRcW3UxpYh_tLKdr3w" class="social-button youtube-link"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
-        <div>
-          <a href="https://steamcommunity.com/id/Ghosvx/" class="social-button steam-link"><i class="fab fa-steam"></i> Steam</a>
-          <a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e" class="social-button spotify-link"><i class="fab fa-spotify"></i> Spotify</a>
-          <a href="https://www.twitch.tv/ghosvx" class="social-button twitch-link"><i class="fab fa-twitch"></i> Twitch</a>
-        </div>
+      <div>
+        <a href="https://steamcommunity.com/id/Ghosvx/" class="social-button steam-link"><i class="fab fa-steam"></i> Steam</a>
+        <a href="https://open.spotify.com/user/5ar7q9dquuervyw4n3xkabmxk?si=3b69b518aef04a9e" class="social-button spotify-link"><i class="fab fa-spotify"></i> Spotify</a>
+        <a href="https://www.twitch.tv/ghosvx" class="social-button twitch-link"><i class="fab fa-twitch"></i> Twitch</a>
       </div>
-    </section>
+    </div>
+  </section>
 
   <script src="/script/script_about.js"></script>
   <script src="/script/mobile.js"></script>
   <script>
     const loader = document.querySelector('.loader');
     const video = document.querySelector('.loader video');
-  
+
     // Check if the page is being loaded for the first time or being refreshed
     if (performance.navigation.type === 1) {
       // Page is being refreshed, hide the loader immediately
@@ -370,17 +358,17 @@
       window.addEventListener('load', function () {
         loader.classList.remove('hide');
       });
-  
+
       video.addEventListener('loadedmetadata', function () {
         video.addEventListener('ended', function () {
           loader.classList.add('hide');
         });
-  
+
         video.addEventListener('error', function () {
           loader.classList.add('hide');
         });
       });
-  
+
       window.addEventListener('beforeunload', function () {
         video.pause();
         video.currentTime = 0;
