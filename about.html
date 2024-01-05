@@ -13,7 +13,7 @@
   <style>
   section {
     padding: 20px;
-    margin: 20px auto;
+    margin: 50px auto 20px; /* Увеличил отступ вверху и добавил немного отступа внизу */
     background-color: #222;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,15 +25,15 @@
   }
 
   .avatar {
-  margin-bottom: -50px; /* Экспериментируйте с этим значением */
-  position: relative;
-  z-index: 1;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  margin: 0 auto;
-}
+    margin-top: -75px; /* Переместил настройку margin вверх */
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 
   .avatar-image {
     position: relative;
@@ -42,7 +42,6 @@
     height: 100%;
     object-fit: cover;
   }
-
   </style>
 
 <style>
