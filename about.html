@@ -11,10 +11,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    html {
-  margin: 0;
-  padding: 0;
-}
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #222;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      z-index: 2; /* Added */
+      overflow: hidden; /* Added to hide overflowing content */
+    }
+  
+    .avatar {
+      margin-bottom: 40px; /* Increased margin */
+      position: relative; /* Added */
+      z-index: 1; /* Added */
+    }
+  
+    .avatar-image {
+      position: relative; /* Added */
+      z-index: 2; /* Added */
+      margin-top: -20px; /* Added */
+      margin-bottom: -20px; /* Added */
+    }
+  </style>
+  
+<style>
 
     body {
       font-family: 'Ubuntu', sans-serif;
@@ -310,6 +333,9 @@
   </div>
 
   <section>
+    <div class="avatar">
+      <img src="/pic/avatar.jpg" alt="Avatar" class="avatar-image">
+    </div>
     <div class="bio">
       <h1>Ghosvx</h1>
     </div>
