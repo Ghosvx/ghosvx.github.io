@@ -34,19 +34,40 @@
     }
     
     section {
-    padding: 20px;
-    margin: 20px;
-    background-color: #222;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    z-index: 2; /* Added */
-  }
-    
-    .bio {
-      margin-bottom: 20px;
-    }
+  padding: 20px;
+  margin: 20px;
+  background-color: #222;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Added */
+  overflow: hidden; /* Added to hide overflowing content */
+}
+
+.avatar {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 40px; /* Increased margin */
+  z-index: 1; /* Added */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+.bio {
+  margin-bottom: 40px; /* Increased margin */
+}
     
     .links {
       margin-top: 20px;
@@ -265,29 +286,6 @@
       transition: opacity 0.3s;
     }
 
-    .avatar {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 40px; /* Increased margin */
-    z-index: 1; /* Added */
-  }
-
-    .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-bottom: 40px;
-  }
-
-  .bio {
-    margin-bottom: 40px; /* Increased margin */
-  }
 </style>
 <style>
     .loader {
@@ -342,8 +340,8 @@
     <div class="bio">
       <h1>Ghosvx</h1>
     </div>
-  
-    <div class="links">
+
+    <div class="links"></div>
       <div>
         <a href="https://t.me/ghosvx" class="social-button telegram"><i class="fab fa-telegram"></i> Telegram</a>
         <a href="https://discordapp.com/users/812653804041666581/" target="_blank" class="social-button discord"><i class="fab fa-discord"></i> Discord</a>
