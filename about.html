@@ -349,12 +349,14 @@ section {
     const loader = document.querySelector('.loader');
     const video = document.querySelector('.loader video');
 
-    // Check if the page is being loaded for the first time or being refreshed
-    if (performance.navigation.type === 1) {
-      // Page is being refreshed, hide the loader immediately
-      loader.classList.add('hide');
-    } else {
-      // Page is being loaded for the first time, show the loader until the video is loaded
+    // Функция для проверки, является ли устройство мобильным
+    function isMobileDevice() {
+      return window.innerWidth <= 768; // Измените ширину по вашему усмотрению
+    }
+
+    // Проверка на мобильное устройство
+    if (!isMobileDevice()) {
+      // Если не мобильное устройство, обрабатываем видео
       window.addEventListener('load', function () {
         loader.classList.remove('hide');
       });
@@ -373,6 +375,9 @@ section {
         video.pause();
         video.currentTime = 0;
       });
+    } else {
+      // Если мобильное устройство, скрываем видео
+      loader.style.display = 'none';
     }
   </script>
 </body>
