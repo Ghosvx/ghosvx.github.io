@@ -299,6 +299,27 @@ section {
       opacity: 0;
       pointer-events: none;
     }
+
+    /* Animation for name */
+    .name-animation {
+      background: linear-gradient(to right, #fff, #222);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: name-gradient 5s infinite;
+    }
+
+    @keyframes name-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -321,7 +342,7 @@ section {
       <img src="/pic/Sawatori.jpeg" alt="Avatar" class="avatar-image">
     </div>
     <div class="bio">
-      <h1>Ghosvx</h1>
+      <h1 class="name-animation">Ghosvx</h1>
     </div>
   
     <div class="links">
