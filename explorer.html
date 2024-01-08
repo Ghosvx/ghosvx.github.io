@@ -6,40 +6,104 @@
         background-image: url("/pic/backexplorer.png");
         background-repeat: no-repeat;
         background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
     }
 
-    .file-icon {
-        width: 50px;
-        height: 50px;
+    .container {
+        background-color: #000;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 300px;
     }
 
-    .file-icon i {
-        font-size: 30px;
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
     }
 </style>
 <!-- END: CSS -->
 
 <!-- BEGIN: HTML -->
 <div id="file-explorer">
-    <ul>
-        <li>
-            <i class="file-icon fas fa-folder"></i>
-            <a href="/explorer/folder1">Folder 1</a>
-            <ul>
-                <li>
-                    <i class="file-icon fas fa-file-alt"></i>
-                    <a href="/explorer/folder1/file1.txt">File 1.txt</a>
-                </li>
-                <li>
-                    <i class="file-icon fas fa-image"></i>
-                    <a href="/explorer/folder1/image.jpg">Image.jpg</a>
-                </li>
-                <li>
-                    <i class="file-icon fas fa-file-pdf"></i>
-                    <a href="/explorer/folder1/document.pdf">Document.pdf</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div class="container">
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="ghosvx" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="beta" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
 </div>
+
+<script>
+    var passwordAttempts = 0;
+
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        if (username === "ghosvx" && password === "beta") {
+            // Successful login
+            alert("Login successful!");
+        } else {
+            passwordAttempts++;
+            
+            if (passwordAttempts >= 3) {
+                // Incorrect password entered 3 times, close the page
+                window.close();
+            } else {
+                // Incorrect password, show error message
+                document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
+            }
+        }
+    });
+</script>
 <!-- END: HTML -->
