@@ -74,6 +74,10 @@
     #login-form {
         font-family: 'Raleway', Arial, sans-serif;
     }
+
+    #file-explorer {
+        display: none; /* Hide the file explorer initially */
+    }
 </style>
 
 
@@ -82,11 +86,11 @@
         <form id="login-form">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="ghosvx" required>
+                <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" value="beta" required>
+                <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
                 <button type="submit">Login</button>
@@ -107,7 +111,8 @@
         
         if (username === "ghosvx" && password === "beta") {
             // Successful login
-            alert("Login successful!");
+            document.getElementById("file-explorer").style.display = "block"; // Show the file explorer
+            document.getElementById("login-form").style.display = "none"; // Hide the login form
         } else {
             passwordAttempts++;
             
