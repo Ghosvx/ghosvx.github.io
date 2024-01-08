@@ -70,11 +70,11 @@
     }
 
     #login-form {
-        font-family: 'Raleway', Arial, sans-serif;
+        display: none; /* Hide the login form */
     }
 
     #file-explorer {
-        display: none; /* Hide the file explorer initially */
+        display: block; /* Show the file explorer */
     }
 </style>
 
@@ -84,53 +84,11 @@
 </div>
 
 <div class="container">
-    <form id="login-form">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="form-group">
-            <button type="submit" id="login-button">Login</button>
-        </div>
-        <div id="error-message" class="error-message"></div>
-    </form>
+    <!-- Removed the login form -->
+    <div id="error-message" class="error-message"></div>
 </div>
 
 <script>
-    var passwordAttempts = 0;
-
-    document.getElementById("login-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        if (username === "ghosvx" && password === "beta") {
-            // Successful login
-            document.getElementById("file-explorer").style.display = "block"; // Show the file explorer
-            document.getElementById("login-form").style.display = "none"; // Hide the login form
-            
-            // Store login information in a cookie
-            document.cookie = "username=" + username + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-            document.cookie = "password=" + password + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-            
-            // Redirect to another page or perform other actions
-            // window.location.href = "/dashboard.html";
-        } else {
-            passwordAttempts++;
-            
-            if (passwordAttempts >= 3) {
-                // Incorrect password entered 3 times, close the page
-                window.close();
-            } else {
-                // Incorrect password, show error message
-                document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
-            }
-        }
-    });
+    // Removed the login form JavaScript code
 </script>
 <!-- END: HTML -->
