@@ -106,7 +106,13 @@
         if (username === "ghosvx" && password === "beta") {
             // Successful login
             document.getElementById("file-explorer").style.display = "block"; // Show the file explorer
-            // document.getElementById("login-form").style.display = "none"; // Commented out to keep the login form visible
+            
+            // Store login information in a cookie
+            document.cookie = "username=" + username + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            document.cookie = "password=" + password + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            
+            // Redirect to another page or perform other actions
+            // window.location.href = "/dashboard.html";
         } else {
             passwordAttempts++;
             
