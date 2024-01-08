@@ -75,8 +75,91 @@
         font-family: 'Raleway', Arial, sans-serif;
     }
 
-    #file-explorer {
-        display: none; /* Hide the file explorer initially */
+    </style>
+    
+    <style>
+        body {
+            background-image: url("/pic/backexplorer.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Ubuntu', Arial, sans-serif; /* Updated font-family */
+        }
+
+        .container {
+            background-color: #000;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        #login-form {
+            font-family: 'Raleway', Arial, sans-serif;
+        }
+    </style>
+
+
+    <div id="file-explorer">
+        <div class="container">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+                <div id="error-message" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+        /* display: none; */ /* Commented out to show the file explorer initially */
     }
 </style>
 
@@ -112,7 +195,7 @@
         if (username === "ghosvx" && password === "beta") {
             // Successful login
             document.getElementById("file-explorer").style.display = "block"; // Show the file explorer
-            document.getElementById("login-form").style.display = "none"; // Hide the login form
+            // document.getElementById("login-form").style.display = "none"; // Commented out to keep the login form visible
         } else {
             passwordAttempts++;
             
