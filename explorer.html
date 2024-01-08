@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.50">
+      <link rel="icon" type="image/x-icon" href="/pic/favicon.ico">
+      <title>Explorer</title>
+      <link rel="stylesheet" href="/css/styles_index.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Raleway:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             background-image: url("/pic/backexplorer.png");
             background-size: cover;
-            background-color: #ffffff; /* White color for better visibility */
+            color: #ffffff; /* White color for better visibility */
         }
         
         .file-icon {
@@ -17,6 +27,8 @@
         .file-list {
             list-style-type: none;
             padding: 0;
+            display: flex; /* Display files in a row */
+            flex-wrap: wrap; /* Wrap files to the next line */
         }
         
         .file-list li {
@@ -24,12 +36,14 @@
             align-items: center;
             margin-bottom: 10px;
             animation: fadeIn 1s ease-in-out;
+            flex-basis: 20%; /* Set each file to occupy 20% of the container width */
         }
         
         .file-list li a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            font-family: 'Raleway', sans-serif; /* Use Raleway font */
             transition: color 0.3s ease-in-out;
         }
         
@@ -50,9 +64,7 @@
     </style>
 </head>
 <body>
-    <h1>File Explorer</h1>
-    
-    <ul class="file-list"></ul>
+    <ul class="file-list">
         <!-- BEGIN: Dynamically generate file list -->
         <li>
             <i class="file-icon fas fa-file"></i>
