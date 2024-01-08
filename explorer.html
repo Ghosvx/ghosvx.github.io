@@ -1,19 +1,20 @@
 <!-- BEGIN: CSS -->
-<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+<style>
     body {
         background-image: url("/pic/backexplorer.png");
         background-repeat: no-repeat;
         background-size: cover;
-    }    
+    }
+
     .file-icon {
         width: 50px;
         height: 50px;
     }
 
-    .file-icon img {
-        max-width: 100%;
-        max-height: 100%;
+    .file-icon i {
+        font-size: 30px;
     }
 </style>
 <!-- END: CSS -->
@@ -22,19 +23,19 @@
 <div id="file-explorer">
     <ul>
         <li>
-            <img class="file-icon" src="folder-icon.png" alt="Folder Icon">
+            <i class="file-icon fas fa-folder"></i>
             <a href="/explorer/folder1">Folder 1</a>
             <ul>
                 <li>
-                    <img class="file-icon" src="text-file-icon.png" alt="Text File Icon">
+                    <i class="file-icon fas fa-file-alt"></i>
                     <a href="/explorer/folder1/file1.txt">File 1.txt</a>
                 </li>
                 <li>
-                    <img class="file-icon" src="image-file-icon.png" alt="Image File Icon">
+                    <i class="file-icon fas fa-image"></i>
                     <a href="/explorer/folder1/image.jpg">Image.jpg</a>
                 </li>
                 <li>
-                    <img class="file-icon" src="pdf-file-icon.png" alt="PDF File Icon">
+                    <i class="file-icon fas fa-file-pdf"></i>
                     <a href="/explorer/folder1/document.pdf">Document.pdf</a>
                 </li>
             </ul>
